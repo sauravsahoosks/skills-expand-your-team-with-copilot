@@ -15,6 +15,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const dayFilters = document.querySelectorAll(".day-filter");
   const timeFilters = document.querySelectorAll(".time-filter");
 
+  // Dark mode toggle
+  const darkModeToggle = document.getElementById("dark-mode-toggle");
+  const darkModeIcon = document.getElementById("dark-mode-icon");
+
+  function applyDarkMode(enabled) {
+    document.body.classList.toggle("dark-mode", enabled);
+    darkModeIcon.textContent = enabled ? "☀️" : "🌙";
+  }
+
+  applyDarkMode(localStorage.getItem("darkMode") === "true");
+
+  darkModeToggle.addEventListener("click", () => {
+    const isDark = !document.body.classList.contains("dark-mode");
+    applyDarkMode(isDark);
+    localStorage.setItem("darkMode", isDark);
+  });
+
   // Authentication elements
   const loginButton = document.getElementById("login-button");
   const userInfo = document.getElementById("user-info");

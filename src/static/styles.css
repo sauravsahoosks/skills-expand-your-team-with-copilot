@@ -617,6 +617,9 @@ footer {
   position: absolute;
   top: 10px;
   right: 15px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 #user-status {
@@ -663,4 +666,43 @@ footer {
 
 #logout-button:hover {
   background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Dark mode toggle button */
+#dark-mode-toggle {
+  font-size: 1.1rem;
+  padding: 4px 10px;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  --background: #1a1a2e;
+  --surface: #16213e;
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0a0b0;
+  --border: #2e2e4e;
+  --border-light: #252545;
+  --border-focus: #3a3a5e;
+  --primary: #3d4fd6;
+  --primary-light: #6672e5;
+  --primary-dark: #1a237e;
+  --success-light: #1b3a1c;
+  --warning-light: #3a2e00;
+  --error-light: #3a0f0f;
+  --info-light: #0a2530;
+}
+
+body.dark-mode .activity-tag {
+  background: #2a2d6e;
+  color: #8fa0ff;
+}
+
+body.dark-mode .skeleton-line {
+  background: linear-gradient(
+    90deg,
+    var(--border-light) 25%,
+    var(--border) 50%,
+    var(--border-light) 75%
+  );
+  background-size: 200% 100%;
 }
